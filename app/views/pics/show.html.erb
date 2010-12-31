@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @pic.title %>
+</p>
+
+<p>
+  <b>When:</b>
+  <%= @pic.when %>
+</p>
+
+<p>
+  <b>Where:</b>
+  <%= @pic.where %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @pic.description %>
+</p>
+
+
+<%= link_to 'Edit', edit_pic_path(@pic) %> |
+<%= link_to 'Back', pics_path %>
