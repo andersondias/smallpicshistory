@@ -3,6 +3,7 @@ require 'test_helper'
 class PicsControllerTest < ActionController::TestCase
   setup do
     @pic = pics(:one)
+    @pic.image = fixture_file_upload('images/travel.jpg')
   end
 
   test "should get index" do

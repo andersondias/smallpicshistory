@@ -20,6 +20,15 @@
   <%= @pic.description %>
 </p>
 
+<p>
+  <b>Image:</b>
+  <%= image_tag(@pic.image.url, :alt => @pic.description, :title => @pic.title) %>
+</p>
+
+<p>
+  <b>Thumb:</b>
+  <%= image_tag(@pic.image.url(:thumb), :alt => @pic.description, :title => @pic.title) %>
+</p>
 
 <%= link_to 'Edit', edit_pic_path(@pic) %> |
 <%= link_to 'Back', pics_path %>
