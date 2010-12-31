@@ -1,29 +1,22 @@
-<h1>Listing pics</h1>
+<div id="thumbs-list">
+  <div id="thumbs" >
+    <%- @pics.each do |pic| %>
+      <%= image_tag(pic.image.url(:thumb), :alt => pic.image.url, :title => pic.title) %>
+    <%- end %>
+  </div>
+</div>
 
-<table>
-  <tr>
-    <th>Title</th>
-    <th>When</th>
-    <th>Where</th>
-    <th>Description</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<div id="photo-panel">
+  <div id="wrapper">
+    <a id="prev"></a>
+    <a id="next"></a>
+    <img id='sample-image' />
+    <div id='photo-panel-detail'>
+      <h2> Descrição: a descrição </h2>
 
-<% @pics.each do |pic| %>
-  <tr>
-    <td><%= pic.title %></td>
-    <td><%= pic.when %></td>
-    <td><%= pic.where %></td>
-    <td><%= pic.description %></td>
-    <td><%= link_to 'Show', pic %></td>
-    <td><%= link_to 'Edit', edit_pic_path(pic) %></td>
-    <td><%= link_to 'Destroy', pic, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
+    </div>
+  </div>
+</div>
 
-<br />
-
-<%= link_to 'New Pic', new_pic_path %>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<%= javascript_include_tag 'photowall' %>
