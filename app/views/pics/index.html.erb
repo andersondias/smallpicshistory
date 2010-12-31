@@ -2,21 +2,30 @@
   <div id="thumbs" >
     <%- @pics.each do |pic| %>
       <%= image_tag(pic.image.url(:thumb), :alt => pic.image.url, :title => pic.title) %>
+      <div class='pic-hidden-detail'>
+        <span class='pic-description'><%= pic.description %></span>
+        <span class='pic-when'><%= pic.when %></span>
+        <span class='pic-where'><%= pic.where %></span>
+      </div>
     <%- end %>
   </div>
 </div>
 
-<div id="photo-panel">
-  <div id="wrapper">
-    <a id="prev"></a>
-    <a id="next"></a>
-    <img id='sample-image' />
-    <div id='photo-panel-detail'>
-      <h2> Descrição: a descrição </h2>
-
-    </div>
+<div id="wrapper">
+  <div id="photo-image-panel"><img id='sample-image' /></div>
+  <div id='photo-detail-panel'>
+    <dl>
+      <dt id='photo-title-label'>Título:</dt>
+      <dd id='photo-title'></dd>
+      <dt id='photo-when-label'>Quando:</dt>
+      <dd id='photo-when'></dd>
+      <dt id='photo-where-label'>Aonde:</dt>
+      <dd id='photo-where'></dd>
+      <dt id='photo-description-label'>Descrição:</dt>
+      <dd id='photo-description'></dd>
+    </dl>
   </div>
 </div>
 
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-<%= javascript_include_tag 'photowall' %>
+<%= javascript_include_tag 'jquery.fancybox-1.3.4', 'photowall' %>
